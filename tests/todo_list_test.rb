@@ -9,7 +9,7 @@ class TodoListTest < Test::Unit::TestCase
 
     # Can create a new todo list
     def test_create_todo_list
-        assert_equal(0,@todo_list.count)
+        assert_equal(1,@todo_list.count)
         assert_equal("My List",@todo_list.title)
     end
 
@@ -44,7 +44,7 @@ class TodoListTest < Test::Unit::TestCase
 
     # Can update an item to done on the list
     def test_update_todo_item_done
-        @todo_list.update_done("Get cat food")
-        assert_equal(true, @todo_list.get_item("Get cat food").done?)
+        @todo_list.complete("Get cat food")
+        assert_equal(true, @todo_list.get_item("Get cat food").is_done?)
     end
 end
